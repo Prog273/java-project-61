@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.\n"
                 + "1 - Greet\n" + "2 - Even\n" + "3 - Calc\n" + "4 - GCD\n"
-                + "0 - Exit");
+                + "5 - Progression\n" + "0 - Exit");
         int choice = scanner.nextInt();
         switch (choice) {
             case 0:
@@ -37,17 +38,21 @@ public class Engine {
                 System.out.println("Welcome to the Brain Games!");
                 GCD.gcd();
                 break;
+            case 5:
+                System.out.println("Your choice: " + choice);
+                System.out.println("Welcome to the Brain Games!");
+                Progression.progression();
+                break;
         }
     }
 
-    public static String userName;
 
-    public static void getUserName() {
+
+    public static String getUserName() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("May I have your name? ");
-        userName = scanner.next();
+        String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
-
-        scanner.close();
+        return userName;
     }
 }

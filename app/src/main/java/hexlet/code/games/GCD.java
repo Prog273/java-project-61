@@ -1,15 +1,15 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
     public static void gcd() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("May I have your name? ");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
+        String userName = Engine.getUserName();
         System.out.println("Find the greatest common divisor of given numbers.");
+        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         for (int i = 0; i < 3; i++) {
             int randomNumber1 = random.nextInt(100) + 1;
@@ -28,7 +28,6 @@ public class GCD {
             if (i == 2) {
                 System.out.println("Congratulations, " + userName + "!");
             }
-
         }
     }
 

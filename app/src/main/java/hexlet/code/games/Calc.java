@@ -1,18 +1,17 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
     public static void calc() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("May I have your name? ");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
+        String userName = Engine.getUserName();
         System.out.println("What is the result of the expression?");
-
         String[] operands = {"+", "-", "*"};
         Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < 3; i++) {
             String randomOperand = operands[random.nextInt(3)];

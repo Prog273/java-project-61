@@ -1,19 +1,19 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
     public static void even() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("May I have your name? ");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
+        String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
         for (int i = 0; i < 3; i++) {
             int randomNumber = random.nextInt(100) + 1;
             System.out.println("Question: " + randomNumber);
+            Scanner scanner = new Scanner(System.in);
             String answer = scanner.next();
             System.out.println("Your answer: " + answer);
             if (answer.equals("yes") && randomNumber % 2 != 0) {
