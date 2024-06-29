@@ -16,18 +16,18 @@ public class Even {
             Scanner scanner = new Scanner(System.in);
             String answer = scanner.next();
             System.out.println("Your answer: " + answer);
-            if (answer.equals("yes") && randomNumber % 2 != 0) {
+            if (!isEven(randomNumber) && answer.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'."
                         + "\nLet's try again, " + userName + "!");
                 scanner.close();
                 break;
-            } else if (answer.equals("no") && randomNumber % 2 == 0) {
+            } else if (isEven(randomNumber) && answer.equals("no")) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'."
                         + "\nLet's try again, " + userName + "!");
                 scanner.close();
                 break;
-            } else if ((answer.equals("yes") && randomNumber % 2 == 0)
-                    || (answer.equals("no") && randomNumber % 2 != 0)) {
+            } else if ((isEven(randomNumber) && answer.equals("yes"))
+                    || (!isEven(randomNumber) && answer.equals("no"))) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("wrong answer ;(.\nLet's try again, " + userName + "!");
@@ -38,5 +38,9 @@ public class Even {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
+    }
+
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }
