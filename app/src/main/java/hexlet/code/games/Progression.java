@@ -12,7 +12,8 @@ public class Progression {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        for (int i = 0; i < 3; i++) {
+        int numberOfAttempts = 3;
+        for (int i = 0; i < numberOfAttempts; i++) {
             int[] elements = new int[10];
             int firstElement = random.nextInt(100) + 1;
             int difference = random.nextInt(10) + 1;

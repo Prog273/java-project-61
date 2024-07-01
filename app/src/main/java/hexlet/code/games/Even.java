@@ -6,11 +6,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static void playEven () {
+    public static void playEven() {
         String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
-        for (int i = 0; i < 3; i++) {
+
+        int numberOfAttempts = 3;
+        for (int i = 0; i < numberOfAttempts; i++) {
             int randomNumber = random.nextInt(100) + 1;
             System.out.println("Question: " + randomNumber);
             Scanner scanner = new Scanner(System.in);

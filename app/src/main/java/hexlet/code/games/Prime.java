@@ -11,7 +11,8 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        for (int i = 0; i < 3; i++) {
+        int numberOfAttempts = 3;
+        for (int i = 0; i < numberOfAttempts; i++) {
             int numberToCheck = random.nextInt(99) + 2;
             System.out.println("Question: " + numberToCheck);
             String answer = scanner.next();

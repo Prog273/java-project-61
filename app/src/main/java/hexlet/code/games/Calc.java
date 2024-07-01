@@ -13,7 +13,8 @@ public class Calc {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 3; i++) {
+        int numberOfAttempts = 3;
+        for (int i = 0; i < numberOfAttempts; i++) {
             String randomOperand = operands[random.nextInt(3)];
             int randomNumber1 = random.nextInt(100) + 1;
             int randomNumber2 = random.nextInt(100) + 1;
