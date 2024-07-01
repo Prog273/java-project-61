@@ -17,7 +17,7 @@ public class Calc {
             String randomOperand = operands[random.nextInt(3)];
             int randomNumber1 = random.nextInt(100) + 1;
             int randomNumber2 = random.nextInt(100) + 1;
-            String expression = randomNumber1 + randomOperand + randomNumber2;
+            String expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
             System.out.println("Question: " + expression);
             int result = 0;
             switch (randomOperand) {
