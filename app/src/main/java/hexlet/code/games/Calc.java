@@ -20,7 +20,7 @@ public class Calc {
             int randomNumber2 = random.nextInt(100) + 1;
             String expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
             System.out.println("Question: " + expression);
-            int result = 0;
+            int result;
             switch (randomOperand) {
                 case "+":
                     result = randomNumber1 + randomNumber2;
@@ -31,6 +31,8 @@ public class Calc {
                 case "*":
                     result = randomNumber1 * randomNumber2;
                     break;
+                default:
+                    result = 0;
             }
             int answer = scanner.nextInt();
             System.out.println("Your answer: " + answer);
