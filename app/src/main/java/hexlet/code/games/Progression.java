@@ -14,15 +14,16 @@ public class Progression {
 
         int numberOfAttempts = 3;
         for (int i = 0; i < numberOfAttempts; i++) {
-            int[] elements = new int[10];
+            int numberOfElements = 10;
+            int[] elements = new int[numberOfElements];
             int firstElement = random.nextInt(100) + 1;
             int difference = random.nextInt(10) + 1;
             elements[0] = firstElement;
             for (int k = 1; k < elements.length; k++) {
                 elements[k] = elements[k - 1] + difference;
             }
-            String[] elementsCopy = new String[10];
-            int index = random.nextInt(10);
+            String[] elementsCopy = new String[numberOfElements];
+            int index = random.nextInt(elementsCopy.length);
             int necessaryNumber = elements[index];
             String question = "";
             for (int j = 0; j < elementsCopy.length; j++) {

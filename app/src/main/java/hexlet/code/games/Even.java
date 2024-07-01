@@ -13,7 +13,8 @@ public class Even {
 
         int numberOfAttempts = 3;
         for (int i = 0; i < numberOfAttempts; i++) {
-            int randomNumber = random.nextInt(100) + 1;
+            int maxNumber = 100;
+            int randomNumber = random.nextInt(maxNumber) + 1;
             System.out.println("Question: " + randomNumber);
             Scanner scanner = new Scanner(System.in);
             String answer = scanner.next();

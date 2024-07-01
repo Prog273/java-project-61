@@ -15,9 +15,10 @@ public class Calc {
 
         int numberOfAttempts = 3;
         for (int i = 0; i < numberOfAttempts; i++) {
-            String randomOperand = operands[random.nextInt(3)];
-            int randomNumber1 = random.nextInt(100) + 1;
-            int randomNumber2 = random.nextInt(100) + 1;
+            String randomOperand = operands[random.nextInt(operands.length)];
+            int maxNumber = 100;
+            int randomNumber1 = random.nextInt(maxNumber) + 1;
+            int randomNumber2 = random.nextInt(maxNumber) + 1;
             String expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
             System.out.println("Question: " + expression);
             int result;

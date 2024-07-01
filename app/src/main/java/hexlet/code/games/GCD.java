@@ -13,8 +13,9 @@ public class GCD {
         Random random = new Random();
         int numberOfAttempts = 3;
         for (int i = 0; i < numberOfAttempts; i++) {
-            int randomNumber1 = random.nextInt(100) + 1;
-            int randomNumber2 = random.nextInt(100) + 1;
+            int maxNumber = 100;
+            int randomNumber1 = random.nextInt(maxNumber) + 1;
+            int randomNumber2 = random.nextInt(maxNumber) + 1;
             System.out.println("Question: " + randomNumber1 + " " + randomNumber2);
             int gcd = countGreatestCommonDivisor(randomNumber1, randomNumber2);
             int answer = scanner.nextInt();
