@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static void playEven() {
+    public static void playEven () {
         String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
