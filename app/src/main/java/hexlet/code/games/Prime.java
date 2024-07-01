@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    public static void prime() {
+    public static void playPrime() {
         String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);

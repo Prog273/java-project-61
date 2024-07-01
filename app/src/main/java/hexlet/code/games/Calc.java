@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
-    public static void calc() {
+    public static void playCalc() {
         String userName = Engine.getUserName();
         System.out.println("What is the result of the expression?");
         String[] operands = {"+", "-", "*"};

@@ -21,19 +21,19 @@ public class Engine {
                 Engine.getUserName();
                 break;
             case 2:
-                Even.even();
+                Even.playEven();
                 break;
             case 3:
-                Calc.calc();
+                Calc.playCalc();
                 break;
             case 4:
-                GCD.gcd();
+                GCD.playGCD();
                 break;
             case 5:
-                Progression.progression();
+                Progression.playProgression();
                 break;
             case 6:
-                Prime.prime();
+                Prime.playPrime();
                 break;
         }
     }

@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
-    public static void progression() {
+    public static void playProgression() {
         String userName = Engine.getUserName();
         System.out.println("What number is missing in the progression?");
         Scanner scanner = new Scanner(System.in);
