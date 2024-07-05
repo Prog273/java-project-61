@@ -6,16 +6,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
+    public static int THREE = 3;
+    public static int HUNDRED = 100;
+
     public static void playGCD() {
         String userName = Engine.getUserName();
         System.out.println("Find the greatest common divisor of given numbers.");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int numberOfAttempts = 3;
-        for (int i = 0; i < numberOfAttempts; i++) {
-            int maxNumber = 100;
-            int randomNumber1 = random.nextInt(maxNumber) + 1;
-            int randomNumber2 = random.nextInt(maxNumber) + 1;
+        for (int i = 0; i < THREE; i++) {
+            int randomNumber1 = random.nextInt(HUNDRED) + 1;
+            int randomNumber2 = random.nextInt(HUNDRED) + 1;
             System.out.println("Question: " + randomNumber1 + " " + randomNumber2);
             int gcd = countGreatestCommonDivisor(randomNumber1, randomNumber2);
             int answer = scanner.nextInt();

@@ -6,6 +6,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
+    public static int THREE = 3;
+    public static int HUNDRED = 100;
+
     public static void playCalc() {
         String userName = Engine.getUserName();
         System.out.println("What is the result of the expression?");
@@ -13,12 +16,10 @@ public class Calc {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
 
-        int numberOfAttempts = 3;
-        for (int i = 0; i < numberOfAttempts; i++) {
+        for (int i = 0; i < THREE; i++) {
             String randomOperand = operands[random.nextInt(operands.length)];
-            int maxNumber = 100;
-            int randomNumber1 = random.nextInt(maxNumber) + 1;
-            int randomNumber2 = random.nextInt(maxNumber) + 1;
+            int randomNumber1 = random.nextInt(HUNDRED) + 1;
+            int randomNumber2 = random.nextInt(HUNDRED) + 1;
             String expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
             System.out.println("Question: " + expression);
             int result;

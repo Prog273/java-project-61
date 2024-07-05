@@ -6,14 +6,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
+    public static int THREE = 3;
+    public static int NINETY_NINE = 99;
+
     public static void playPrime() {
         String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int numberOfAttempts = 3;
-        for (int i = 0; i < numberOfAttempts; i++) {
-            int numberToCheck = random.nextInt(99) + 2;
+        for (int i = 0; i < THREE; i++) {
+            int numberToCheck = random.nextInt(NINETY_NINE) + 2;
             System.out.println("Question: " + numberToCheck);
             String answer = scanner.next();
             System.out.println("Your answer: " + answer);

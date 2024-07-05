@@ -9,6 +9,14 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
+    final static int ZERO = 0;
+    final static int ONE = 1;
+    final static int TWO = 2;
+    final static int THREE = 3;
+    final static int FOUR = 4;
+    final static int FIVE = 5;
+    final static int SIX = 6;
+
     public static void greet() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.\n"
@@ -18,25 +26,25 @@ public class Engine {
         System.out.println("Your choice: " + choice);
         System.out.println("Welcome to the Brain Games!");
         switch (choice) {
-            case 0:
+            case ZERO:
                 scanner.close();
                 break;
-            case 1:
+            case ONE:
                 Engine.getUserName();
                 break;
-            case 2:
+            case TWO:
                 Even.playEven();
                 break;
-            case 3:
+            case THREE:
                 Calc.playCalc();
                 break;
-            case 4:
+            case FOUR:
                 GCD.playGCD();
                 break;
-            case 5:
+            case FIVE:
                 Progression.playProgression();
                 break;
-            case 6:
+            case SIX:
                 Prime.playPrime();
                 break;
             default:

@@ -6,15 +6,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
+    public static int THREE = 3;
+    public static int HUNDRED = 100;
     public static void playEven() {
         String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
 
-        int numberOfAttempts = 3;
-        for (int i = 0; i < numberOfAttempts; i++) {
-            int maxNumber = 100;
-            int randomNumber = random.nextInt(maxNumber) + 1;
+        for (int i = 0; i < THREE; i++) {
+            int randomNumber = random.nextInt(HUNDRED) + 1;
             System.out.println("Question: " + randomNumber);
             Scanner scanner = new Scanner(System.in);
             String answer = scanner.next();
