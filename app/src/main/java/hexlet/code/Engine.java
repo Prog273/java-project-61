@@ -9,13 +9,13 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
-    final static int ZERO = 0;
-    final static int ONE = 1;
-    final static int TWO = 2;
-    final static int THREE = 3;
-    final static int FOUR = 4;
-    final static int FIVE = 5;
-    final static int SIX = 6;
+    static final int ZERO = 0;
+    static final int ONE = 1;
+    static final int TWO = 2;
+    static final int THREE = 3;
+    static final int FOUR = 4;
+    static final int FIVE = 5;
+    static final int SIX = 6;
 
     public static void greet() {
         Scanner scanner = new Scanner(System.in);

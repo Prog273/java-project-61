@@ -6,8 +6,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    public static int THREE = 3;
-    public static int NINETY_NINE = 99;
+    static final int THREE = 3;
+    static final int NINETY_NINE = 99;
 
     public static void playPrime() {
         String userName = Engine.getUserName();

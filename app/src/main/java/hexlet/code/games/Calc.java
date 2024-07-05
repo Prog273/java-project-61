@@ -6,8 +6,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
-    public static int THREE = 3;
-    public static int HUNDRED = 100;
+    static final int THREE = 3;
+    static final int HUNDRED = 100;
 
     public static void playCalc() {
         String userName = Engine.getUserName();

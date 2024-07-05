@@ -6,8 +6,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
-    public static int THREE = 3;
-    public static int HUNDRED = 100;
+    static final int THREE = 3;
+    static final int HUNDRED = 100;
 
     public static void playGCD() {
         String userName = Engine.getUserName();

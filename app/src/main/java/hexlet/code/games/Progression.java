@@ -6,9 +6,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
-    public static int TEN = 10;
-    public static int THREE = 3;
-    public static int HUNDRED = 100;
+    static final int TEN = 10;
+    static final int THREE = 3;
+    static final int HUNDRED = 100;
 
     public static void playProgression() {
         String userName = Engine.getUserName();
