@@ -5,11 +5,11 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GCD {
+public class GcdGame {
     static final int THREE = 3;
     static final int HUNDRED = 100;
 
-    public static void playGCD() {
+    public static void playGcdGame() {
         String userName = Engine.getUserName();
         System.out.println("Find the greatest common divisor of given numbers.");
         Scanner scanner = new Scanner(System.in);

@@ -5,10 +5,10 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Even {
+public class EvenGame {
     static final int THREE = 3;
     static final int HUNDRED = 100;
-    public static void playEven() {
+    public static void playEvenGame() {
         String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();

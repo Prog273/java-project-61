@@ -1,11 +1,12 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.GcdGame;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.ProgressionGame;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
@@ -33,19 +34,19 @@ public class Engine {
                 Engine.getUserName();
                 break;
             case TWO:
-                Even.playEven();
+                EvenGame.playEvenGame();
                 break;
             case THREE:
-                Calc.playCalc();
+                CalcGame.playCalcGame();
                 break;
             case FOUR:
-                GCD.playGCD();
+                GcdGame.playGcdGame();
                 break;
             case FIVE:
-                Progression.playProgression();
+                ProgressionGame.playProgressionGame();
                 break;
             case SIX:
-                Prime.playPrime();
+                PrimeGame.playPrimeGame();
                 break;
             default:
                 scanner.close();
@@ -58,5 +59,14 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         return userName;
+    }
+
+    public static void playGame() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        String userName = Engine.getUserName();
+        for (int i = 0; i < THREE; i++) {
+
+        }
     }
 }

@@ -5,11 +5,11 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Prime {
+public class PrimeGame {
     static final int THREE = 3;
     static final int NINETY_NINE = 99;
 
-    public static void playPrime() {
+    public static void playPrimeGame() {
         String userName = Engine.getUserName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
