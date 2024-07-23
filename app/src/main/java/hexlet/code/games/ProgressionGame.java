@@ -9,8 +9,8 @@ public class ProgressionGame {
     static final int THREE = 3;
     static final int TEN = 10;
     static final int HUNDRED = 100;
-    static String question;
-    static int necessaryNumber;
+    private static String question;
+    private static int necessaryNumber;
 
     public static void playProgressionGame() {
         String userName = Engine.getUserName();

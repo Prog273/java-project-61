@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class CalcGame {
     static final int THREE = 3;
     static final int HUNDRED = 100;
-    static public String expression;
-    static public int result;
+    private static String expression;
+    private static int result;
 
     public static void playCalcGame() {
         Scanner scanner = new Scanner(System.in);
