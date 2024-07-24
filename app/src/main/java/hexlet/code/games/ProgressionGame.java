@@ -2,37 +2,32 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class ProgressionGame {
     static final int THREE = 3;
     static final int TEN = 10;
     static final int HUNDRED = 100;
+    private static String progressionWithMissedMember;
+    private static Integer necessaryNumber;
+    private static String initialQuestion;
     private static String question;
-    private static int necessaryNumber;
+    private static String correctAnswer;
 
     public static void playProgressionGame() {
-        String userName = Engine.getUserName();
-        System.out.println("What number is missing in the progression?");
-        Scanner scanner = new Scanner(System.in);
+        initialQuestion = "What number is missing in the progression?";
+        System.out.println(initialQuestion);
+        ArrayList<String> gameData = new ArrayList<>();
 
         for (int i = 0; i < THREE; i++) {
             generateProgression();
-            System.out.println("Question: " + question);
-            int answer = scanner.nextInt();
-            System.out.println("Your answer: " + answer);
-            if (answer == necessaryNumber) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                        + necessaryNumber + "'\nLet's try again, " + userName + "!");
-                break;
-            }
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            question = "Question: " + progressionWithMissedMember;
+            correctAnswer = necessaryNumber.toString();
+            gameData.add(question);
+            gameData.add(correctAnswer);
         }
+        Engine.playGame(gameData);
     }
 
     public static void generateProgression() {
@@ -49,11 +44,11 @@ public class ProgressionGame {
         String[] elementsCopy = new String[numberOfElements];
         int index = random.nextInt(elementsCopy.length);
         necessaryNumber = elements[index];
-        question = "";
+        progressionWithMissedMember = "";
         for (int j = 0; j < elementsCopy.length; j++) {
             elementsCopy[j] = Integer.toString(elements[j]);
             elementsCopy[index] = "..";
-            question = question + elementsCopy[j] + " ";
+            progressionWithMissedMember = progressionWithMissedMember + elementsCopy[j] + " ";
         }
     }
 }

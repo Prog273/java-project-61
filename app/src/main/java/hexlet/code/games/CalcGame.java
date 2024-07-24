@@ -2,36 +2,31 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class CalcGame {
     static final int THREE = 3;
     static final int HUNDRED = 100;
     private static String expression;
-    private static int result;
+    private static Integer result;
+    private static String initialQuestion;
+    private static String question;
+    private static String correctAnswer;
 
     public static void playCalcGame() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Engine.getUserName();
-        System.out.println("What is the result of the expression?");
+        initialQuestion = "What is the result of the expression?";
+        System.out.println(initialQuestion);
+        ArrayList<String> gameData = new ArrayList<>();
 
         for (int i = 0; i < THREE; i++) {
             generateOperation();
-            System.out.println("Question: " + expression);
-            int answer = scanner.nextInt();
-            System.out.println("Your answer: " + answer);
-            if (answer == result) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result
-                        + "'\nLet's try again, " + userName + "!");
-                break;
-            }
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            question = "Question: " + expression;
+            correctAnswer = result.toString();
+            gameData.add(question);
+            gameData.add(correctAnswer);
         }
+        Engine.playGame(gameData);
     }
 
     public static void generateOperation() {
