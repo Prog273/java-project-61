@@ -130,9 +130,7 @@ public class Engine {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
-
     }
-
 
     public static boolean stringToBoolean(String str) {
         if (str.equalsIgnoreCase("true")) {
