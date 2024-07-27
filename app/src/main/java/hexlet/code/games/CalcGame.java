@@ -10,11 +10,11 @@ public class CalcGame {
     static final int HUNDRED = 100;
     private static String expression;
     private static Integer result;
-    private static String initialQuestion;
-    private static String question;
-    private static String correctAnswer;
 
     public static void playCalcGame() {
+        String initialQuestion;
+        String question;
+        String correctAnswer;
         initialQuestion = "What is the result of the expression?";
         System.out.println(initialQuestion);
         ArrayList<String> gameData = new ArrayList<>();
@@ -36,18 +36,24 @@ public class CalcGame {
         int randomNumber1 = random.nextInt(HUNDRED) + 1;
         int randomNumber2 = random.nextInt(HUNDRED) + 1;
         expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
-        switch (randomOperand) {
+        result = solveProblem(randomNumber1, randomNumber2, randomOperand);
+    }
+
+    public static Integer solveProblem(int number1, int number2, String operand) {
+        int result;
+        switch (operand) {
             case "+":
-                result = randomNumber1 + randomNumber2;
+                result = number1 + number2;
                 break;
             case "-":
-                result = randomNumber1 - randomNumber2;
+                result = number1 - number2;
                 break;
             case "*":
-                result = randomNumber1 * randomNumber2;
+                result = number1 * number2;
                 break;
             default:
                 result = 0;
         }
+        return result;
     }
 }
