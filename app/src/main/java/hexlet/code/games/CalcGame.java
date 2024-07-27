@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class CalcGame {
-    static final int THREE = 3;
-    static final int HUNDRED = 100;
+    private static final int THREE = 3;
+    private static final int HUNDRED = 100;
     private static String expression;
     private static Integer result;
 
@@ -15,6 +15,7 @@ public class CalcGame {
         String initialQuestion;
         String question;
         String correctAnswer;
+
         initialQuestion = "What is the result of the expression?";
         System.out.println(initialQuestion);
         ArrayList<String> gameData = new ArrayList<>();

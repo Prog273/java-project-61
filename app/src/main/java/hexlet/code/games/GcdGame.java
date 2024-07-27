@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GcdGame {
-    static final int THREE = 3;
-    static final int HUNDRED = 100;
-    private static String initialQuestion;
-    private static String question;
-    private static String correctAnswer;
+    private static final int THREE = 3;
+    private static final int HUNDRED = 100;
 
     public static void playGcdGame() {
+        String initialQuestion;
+        String question;
+        String correctAnswer;
+
         initialQuestion = "Find the greatest common divisor of given numbers.";
         System.out.println(initialQuestion);
         ArrayList<String> gameData = new ArrayList<>();

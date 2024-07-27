@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Engine {
-    static final int ZERO = 0;
-    static final int ONE = 1;
-    static final int TWO = 2;
-    static final int THREE = 3;
-    static final int FOUR = 4;
-    static final int FIVE = 5;
-    static final int SIX = 6;
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
+    private static final int TWO = 2;
+    private static final int THREE = 3;
+    private static final int FOUR = 4;
+    private static final int FIVE = 5;
+    private static final int SIX = 6;
     private static String question;
     private static boolean checkingOfNumber;
     private static String answer;

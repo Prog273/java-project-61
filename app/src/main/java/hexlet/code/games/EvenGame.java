@@ -6,12 +6,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class EvenGame {
-    static final int THREE = 3;
-    static final int HUNDRED = 100;
-    private static String initialQuestion;
-    private static String question;
+    private static final int THREE = 3;
+    private static final int HUNDRED = 100;
 
     public static void playEvenGame() {
+        String initialQuestion;
+        String question;
+
         initialQuestion = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         System.out.println(initialQuestion);
         Random random = new Random();

@@ -6,12 +6,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class PrimeGame {
-    static final int THREE = 3;
-    static final int NINETY_NINE = 99;
-    private static String initialQuestion;
-    private static String question;
+    private static final int THREE = 3;
+    private static final int NINETY_NINE = 99;
 
     public static void playPrimeGame() {
+        String initialQuestion;
+        String question;
+
         initialQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         System.out.println(initialQuestion);
         Random random = new Random();
