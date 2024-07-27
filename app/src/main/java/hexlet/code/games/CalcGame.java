@@ -41,20 +41,20 @@ public class CalcGame {
     }
 
     public static Integer solveProblem(int number1, int number2, String operand) {
-        int result;
+        int resultOfOperation;
         switch (operand) {
             case "+":
-                result = number1 + number2;
+                resultOfOperation = number1 + number2;
                 break;
             case "-":
-                result = number1 - number2;
+                resultOfOperation = number1 - number2;
                 break;
             case "*":
-                result = number1 * number2;
+                resultOfOperation = number1 * number2;
                 break;
             default:
-                result = 0;
+                resultOfOperation = 0;
         }
-        return result;
+        return resultOfOperation;
     }
 }
