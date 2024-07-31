@@ -21,11 +21,16 @@ public class EvenGame {
         for (int i = 0; i < THREE; i++) {
             int numberToCheck = random.nextInt(HUNDRED) + 1;
             String question = "Question: " + numberToCheck;
+            String correctAnswer;
+            if (isNumberEven(numberToCheck)) {
+                correctAnswer = "yes";
+            } else {
+                correctAnswer = "no";
+            }
             gameData[i][ZERO] = question;
-            String isEven = ((Boolean) isNumberEven(numberToCheck)).toString();
-            gameData[i][ONE] = isEven;
+            gameData[i][ONE] = correctAnswer;
         }
-        Engine.playGame2(gameData);
+        Engine.playGame(gameData);
     }
 
     public static boolean isNumberEven(int number) {

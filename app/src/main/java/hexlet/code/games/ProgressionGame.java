@@ -27,7 +27,8 @@ public class ProgressionGame {
             int firstElement = random.nextInt(HUNDRED) + 1;
             int difference = random.nextInt(TEN) + 1;
 
-            generateProgression(numberOfElements, firstElement, difference);
+            int elements[] = generateProgression(numberOfElements, firstElement, difference);
+            generateProgressionWithMissedElement(elements);
             String question = "Question: " + progressionWithMissedMember;
             String correctAnswer = necessaryNumber.toString();
             gameData[i][ZERO] = question;
@@ -37,15 +38,19 @@ public class ProgressionGame {
     }
 
 
-    public static void generateProgression(int numberOfElements, int firstElement, int difference) {
+    public static int[] generateProgression(int numberOfElements, int firstElement, int difference) {
         Random random = new Random();
         int[] elements = new int[numberOfElements];
         elements[0] = firstElement;
         for (int k = 1; k < elements.length; k++) {
             elements[k] = elements[k - 1] + difference;
         }
+        return elements;
+    }
 
-        String[] elementsCopy = new String[numberOfElements];
+    public static void generateProgressionWithMissedElement(int[] elements) {
+        Random random = new Random();
+        String[] elementsCopy = new String[elements.length];
         int index = random.nextInt(elementsCopy.length);
         necessaryNumber = elements[index];
         progressionWithMissedMember = "";
@@ -57,4 +62,3 @@ public class ProgressionGame {
         }
     }
 }
-

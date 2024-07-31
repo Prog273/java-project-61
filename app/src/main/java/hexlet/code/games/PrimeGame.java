@@ -21,11 +21,16 @@ public class PrimeGame {
         for (int i = 0; i < THREE; i++) {
             int numberToCheck = random.nextInt(NINETY_NINE) + 2;
             String question = "Question: " + numberToCheck;
+            String correctAnswer;
+            if (isNumberPrime(numberToCheck)) {
+                correctAnswer = "yes";
+            } else {
+                correctAnswer = "no";
+            }
             gameData[i][ZERO] = question;
-            String isPrime = ((Boolean) isNumberPrime(numberToCheck)).toString();
-            gameData[i][ONE] = isPrime;
+            gameData[i][ONE] = correctAnswer;
         }
-        Engine.playGame2(gameData);
+        Engine.playGame(gameData);
     }
 
     public static boolean isNumberPrime(int number) {
