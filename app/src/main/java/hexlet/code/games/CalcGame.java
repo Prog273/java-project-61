@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import javax.imageio.metadata.IIOMetadataFormatImpl;
-import java.util.ArrayList;
 import java.util.Random;
 
 import static hexlet.code.Engine.THREE;

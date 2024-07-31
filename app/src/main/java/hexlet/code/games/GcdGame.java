@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import static hexlet.code.Engine.THREE;
@@ -14,7 +13,7 @@ public class GcdGame {
     private static final int TWO = 2;
 
     public static void playGcdGame() {
-        String initialQuestion = "Find the greatest common divisor of given numbers.";;
+        String initialQuestion = "Find the greatest common divisor of given numbers.";
         System.out.println(initialQuestion);
         String[][] gameData = new String[THREE][TWO];
         Random random = new Random();
