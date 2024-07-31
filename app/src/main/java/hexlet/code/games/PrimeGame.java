@@ -5,25 +5,26 @@ import hexlet.code.Engine;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static hexlet.code.Engine.THREE;
+
 public class PrimeGame {
-    private static final int THREE = 3;
     private static final int NINETY_NINE = 99;
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
+    private static final int TWO = 2;
 
     public static void playPrimeGame() {
-        String initialQuestion;
-        String question;
-
-        initialQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String initialQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         System.out.println(initialQuestion);
         Random random = new Random();
-        ArrayList<String> gameData = new ArrayList<>();
+        String[][] gameData = new String[THREE][TWO];
 
         for (int i = 0; i < THREE; i++) {
             int numberToCheck = random.nextInt(NINETY_NINE) + 2;
-            question = "Question: " + numberToCheck;
-            gameData.add(question);
+            String question = "Question: " + numberToCheck;
+            gameData[i][ZERO] = question;
             String isPrime = ((Boolean) isNumberPrime(numberToCheck)).toString();
-            gameData.add(isPrime);
+            gameData[i][ONE] = isPrime;
         }
         Engine.playGame2(gameData);
     }

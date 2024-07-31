@@ -2,30 +2,31 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import javax.imageio.metadata.IIOMetadataFormatImpl;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static hexlet.code.Engine.THREE;
+
 public class CalcGame {
-    private static final int THREE = 3;
     private static final int HUNDRED = 100;
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
+    private static final int TWO = 2;
     private static String expression;
     private static Integer result;
 
     public static void playCalcGame() {
-        String initialQuestion;
-        String question;
-        String correctAnswer;
-
-        initialQuestion = "What is the result of the expression?";
+        String initialQuestion = "What is the result of the expression?";
         System.out.println(initialQuestion);
-        ArrayList<String> gameData = new ArrayList<>();
+        String[][] gameData = new String[THREE][TWO];
 
         for (int i = 0; i < THREE; i++) {
             generateOperation();
-            question = "Question: " + expression;
-            correctAnswer = result.toString();
-            gameData.add(question);
-            gameData.add(correctAnswer);
+            String question = "Question: " + expression;
+            String correctAnswer = result.toString();
+            gameData[i][ZERO] = question;
+            gameData[i][ONE] = correctAnswer;
         }
         Engine.playGame(gameData);
     }

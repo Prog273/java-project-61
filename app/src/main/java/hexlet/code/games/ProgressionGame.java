@@ -5,21 +5,22 @@ import hexlet.code.Engine;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static hexlet.code.Engine.THREE;
+
+
 public class ProgressionGame {
-    private static final int THREE = 3;
     private static final int TEN = 10;
     private static final int HUNDRED = 100;
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
+    private static final int TWO = 2;
     private static String progressionWithMissedMember;
     private static Integer necessaryNumber;
 
     public static void playProgressionGame() {
-        String initialQuestion;
-        String question;
-        String correctAnswer;
-
-        initialQuestion = "What number is missing in the progression?";
+        String initialQuestion = "What number is missing in the progression?";
         System.out.println(initialQuestion);
-        ArrayList<String> gameData = new ArrayList<>();
+        String[][] gameData = new String[THREE][TWO];
         int numberOfElements = TEN;
         Random random = new Random();
 
@@ -28,10 +29,10 @@ public class ProgressionGame {
             int difference = random.nextInt(TEN) + 1;
 
             generateProgression(numberOfElements, firstElement, difference);
-            question = "Question: " + progressionWithMissedMember;
-            correctAnswer = necessaryNumber.toString();
-            gameData.add(question);
-            gameData.add(correctAnswer);
+            String question = "Question: " + progressionWithMissedMember;
+            String correctAnswer = necessaryNumber.toString();
+            gameData[i][ZERO] = question;
+            gameData[i][ONE] = correctAnswer;
         }
         Engine.playGame(gameData);
     }

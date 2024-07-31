@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int THREE = 3;
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
+    public static final int THREE = 3;
     private static String question;
     private static boolean checkingOfNumber;
     private static String answer;
@@ -18,19 +20,16 @@ public class Engine {
         return userName;
     }
 
-    public static void playGame(ArrayList<String> gameData) {
+    public static void playGame(String[][] gameData) {
         Scanner scanner = new Scanner(System.in);
         String userName = Engine.getUserName();
-        int index = 0;
 
         for (int i = 0; i < THREE; i++) {
-            question = gameData.get(index);
-            index++;
+            question = gameData[i][ZERO];
             System.out.println(question);
             answer = scanner.next();
             System.out.println("Your answer: " + answer);
-            correctAnswer = gameData.get(index);
-            index++;
+            correctAnswer = gameData[i][ONE];
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
@@ -44,17 +43,14 @@ public class Engine {
         }
     }
 
-    public static void playGame2(ArrayList<String> gameData) {
+    public static void playGame2(String[][] gameData) {
         Scanner scanner = new Scanner(System.in);
         String userName = Engine.getUserName();
-        int index = 0;
 
         for (int i = 0; i < THREE; i++) {
-            question = gameData.get(index);
-            index++;
+            question = gameData[i][ZERO];
             System.out.println(question);
-            checkingOfNumber = stringToBoolean(gameData.get(index));
-            index++;
+            checkingOfNumber = stringToBoolean(gameData[i][ONE]);
             answer = scanner.next();
             System.out.println("Your answer: " + answer);
             if (checkingOfNumber && answer.equalsIgnoreCase("yes")
