@@ -3,7 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.ROUNDS_NUMBER;
+import static hexlet.code.Engine.FIRST_ELEMENTS_NUMBER;
+import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class EvenGame {
     private static final int HUNDRED_AND_ONE = 101;
@@ -14,7 +16,7 @@ public class EvenGame {
         String[][] gameData = new String[ROUNDS_NUMBER][ROWS_NUMBER];
 
         for (int i = 0; i < ROUNDS_NUMBER; i++) {
-            int numberToCheck = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
+            int numberToCheck = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
             String question = "Question: " + numberToCheck;
             String correctAnswer;
             if (isNumberEven(numberToCheck)) {

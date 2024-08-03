@@ -3,7 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.ROUNDS_NUMBER;
+import static hexlet.code.Engine.FIRST_ELEMENTS_NUMBER;
+import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class CalcGame {
     private static final int HUNDRED_AND_ONE = 101;
@@ -29,8 +31,8 @@ public class CalcGame {
     public static String[] generateOperation() {
         String[] operands = {"+", "-", "*"};
         String randomOperand = operands[Utils.getRandomInt(operands.length)];
-        int randomNumber1 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
-        int randomNumber2 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
+        int randomNumber1 = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
+        int randomNumber2 = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
         String expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
         Integer result = solveProblem(randomNumber1, randomNumber2, randomOperand);
         String[] expressionAndResult = {expression, result.toString()};

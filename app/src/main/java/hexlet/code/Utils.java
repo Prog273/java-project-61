@@ -8,6 +8,7 @@ public class Utils {
         int randomNumber = random.nextInt(firstNumber, lastNumber);
         return randomNumber;
     }
+
     public static int getRandomInt(int lastNumber) {
         Random random = new Random();
         int randomNumber = random.nextInt(lastNumber);

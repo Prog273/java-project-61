@@ -3,8 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import static hexlet.code.Engine.*;
-
+import static hexlet.code.Engine.ROUNDS_NUMBER;
+import static hexlet.code.Engine.FIRST_ELEMENTS_NUMBER;
+import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class ProgressionGame {
     private static final int TEN = 10;
@@ -52,7 +53,8 @@ public class ProgressionGame {
             elementsCopy[index] = "..";
             progressionWithMissedMember = progressionWithMissedMember + elementsCopy[i] + " ";
         }
-        String[] progressionWithMissedMemberAndNecessaryNumber = {progressionWithMissedMember, necessaryNumber.toString()};
+        String[] progressionWithMissedMemberAndNecessaryNumber
+                = {progressionWithMissedMember, necessaryNumber.toString()};
         return progressionWithMissedMemberAndNecessaryNumber;
     }
 }

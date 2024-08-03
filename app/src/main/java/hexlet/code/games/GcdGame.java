@@ -3,7 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.ROUNDS_NUMBER;
+import static hexlet.code.Engine.FIRST_ELEMENTS_NUMBER;
+import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class GcdGame {
     private static final int HUNDRED_AND_ONE = 101;
@@ -13,8 +15,8 @@ public class GcdGame {
     public static void playGcdGame() {
         String[][] gameData = new String[ROUNDS_NUMBER][ROWS_NUMBER];
         for (int i = 0; i < ROUNDS_NUMBER; i++) {
-            int randomNumber1 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
-            int randomNumber2 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
+            int randomNumber1 = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
+            int randomNumber2 = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
             String question = "Question: " + randomNumber1 + " " + randomNumber2;
             Integer gcd = countGreatestCommonDivisor(randomNumber1, randomNumber2);
             String correctAnswer = gcd.toString();
