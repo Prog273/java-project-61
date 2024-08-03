@@ -1,25 +1,20 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
-import java.util.Random;
-
-import static hexlet.code.Engine.THREE;
+import static hexlet.code.Engine.*;
 
 public class PrimeGame {
-    private static final int NINETY_NINE = 99;
-    private static final int ZERO = 0;
+    private static final int HUNDRED_AND_ONE = 101;
     private static final int ONE = 1;
-    private static final int TWO = 2;
+    private static final String INITIAL_QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void playPrimeGame() {
-        String initialQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        System.out.println(initialQuestion);
-        Random random = new Random();
-        String[][] gameData = new String[THREE][TWO];
+        String[][] gameData = new String[ROUNDS_NUMBER][ROWS_NUMBER];
 
-        for (int i = 0; i < THREE; i++) {
-            int numberToCheck = random.nextInt(NINETY_NINE) + 2;
+        for (int i = 0; i < ROUNDS_NUMBER; i++) {
+            int numberToCheck = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
             String question = "Question: " + numberToCheck;
             String correctAnswer;
             if (isNumberPrime(numberToCheck)) {
@@ -27,10 +22,10 @@ public class PrimeGame {
             } else {
                 correctAnswer = "no";
             }
-            gameData[i][ZERO] = question;
+            gameData[i][FIRST_ELEMENTS_NUMBER] = question;
             gameData[i][ONE] = correctAnswer;
         }
-        Engine.playGame(gameData);
+        Engine.playGame(INITIAL_QUESTION, gameData);
     }
 
     public static boolean isNumberPrime(int number) {

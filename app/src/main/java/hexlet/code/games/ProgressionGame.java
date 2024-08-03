@@ -1,64 +1,58 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
-import java.util.Random;
-
-import static hexlet.code.Engine.THREE;
+import static hexlet.code.Engine.*;
 
 
 public class ProgressionGame {
     private static final int TEN = 10;
-    private static final int HUNDRED = 100;
-    private static final int ZERO = 0;
+    private static final int ELEVEN = 11;
+    private static final int HUNDRED_AND_ONE = 101;
     private static final int ONE = 1;
-    private static final int TWO = 2;
-    private static String progressionWithMissedMember;
-    private static Integer necessaryNumber;
+    private static final String INITIAL_QUESTION = "What number is missing in the progression?";
 
     public static void playProgressionGame() {
-        String initialQuestion = "What number is missing in the progression?";
-        System.out.println(initialQuestion);
-        String[][] gameData = new String[THREE][TWO];
+        String[][] gameData = new String[ROUNDS_NUMBER][ROWS_NUMBER];
         int numberOfElements = TEN;
-        Random random = new Random();
 
-        for (int i = 0; i < THREE; i++) {
-            int firstElement = random.nextInt(HUNDRED) + 1;
-            int difference = random.nextInt(TEN) + 1;
-
+        for (int i = 0; i < ROUNDS_NUMBER; i++) {
+            int firstElement = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
+            int difference = Utils.getRandomInt(ONE, ELEVEN);
             int[] elements = generateProgression(numberOfElements, firstElement, difference);
-            generateProgressionWithMissedElement(elements);
+            String[] progressionWithMissedMemberAndNecessaryNumber = generateProgressionWithMissedElement(elements);
+            String progressionWithMissedMember = progressionWithMissedMemberAndNecessaryNumber[FIRST_ELEMENTS_NUMBER];
+            Integer necessaryNumber = Integer.valueOf(progressionWithMissedMemberAndNecessaryNumber[ONE]);
             String question = "Question: " + progressionWithMissedMember;
             String correctAnswer = necessaryNumber.toString();
-            gameData[i][ZERO] = question;
+            gameData[i][FIRST_ELEMENTS_NUMBER] = question;
             gameData[i][ONE] = correctAnswer;
         }
-        Engine.playGame(gameData);
+        Engine.playGame(INITIAL_QUESTION, gameData);
     }
 
-
     public static int[] generateProgression(int numberOfElements, int firstElement, int difference) {
-        Random random = new Random();
         int[] elements = new int[numberOfElements];
         elements[0] = firstElement;
-        for (int k = 1; k < elements.length; k++) {
-            elements[k] = elements[k - 1] + difference;
+        for (int i = 1; i < elements.length; i++) {
+            elements[i] = elements[i - 1] + difference;
         }
         return elements;
     }
 
-    public static void generateProgressionWithMissedElement(int[] elements) {
-        Random random = new Random();
+    public static String[] generateProgressionWithMissedElement(int[] elements) {
         String[] elementsCopy = new String[elements.length];
-        int index = random.nextInt(elementsCopy.length);
-        necessaryNumber = elements[index];
-        progressionWithMissedMember = "";
+        int index = Utils.getRandomInt(elementsCopy.length);
+        Integer necessaryNumber = elements[index];
+        String progressionWithMissedMember = "";
 
-        for (int j = 0; j < elementsCopy.length; j++) {
-            elementsCopy[j] = Integer.toString(elements[j]);
+        for (int i = 0; i < elementsCopy.length; i++) {
+            elementsCopy[i] = Integer.toString(elements[i]);
             elementsCopy[index] = "..";
-            progressionWithMissedMember = progressionWithMissedMember + elementsCopy[j] + " ";
+            progressionWithMissedMember = progressionWithMissedMember + elementsCopy[i] + " ";
         }
+        String[] progressionWithMissedMemberAndNecessaryNumber = {progressionWithMissedMember, necessaryNumber.toString()};
+        return progressionWithMissedMemberAndNecessaryNumber;
     }
 }

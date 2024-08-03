@@ -1,32 +1,27 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
-import java.util.Random;
-
-import static hexlet.code.Engine.THREE;
+import static hexlet.code.Engine.*;
 
 public class GcdGame {
-    private static final int HUNDRED = 100;
-    private static final int ZERO = 0;
+    private static final int HUNDRED_AND_ONE = 101;
     private static final int ONE = 1;
-    private static final int TWO = 2;
+    private static final String INITIAL_QUESTION = "Find the greatest common divisor of given numbers.";
 
     public static void playGcdGame() {
-        String initialQuestion = "Find the greatest common divisor of given numbers.";
-        System.out.println(initialQuestion);
-        String[][] gameData = new String[THREE][TWO];
-        Random random = new Random();
-        for (int i = 0; i < THREE; i++) {
-            int randomNumber1 = random.nextInt(HUNDRED) + 1;
-            int randomNumber2 = random.nextInt(HUNDRED) + 1;
+        String[][] gameData = new String[ROUNDS_NUMBER][ROWS_NUMBER];
+        for (int i = 0; i < ROUNDS_NUMBER; i++) {
+            int randomNumber1 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
+            int randomNumber2 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
             String question = "Question: " + randomNumber1 + " " + randomNumber2;
             Integer gcd = countGreatestCommonDivisor(randomNumber1, randomNumber2);
             String correctAnswer = gcd.toString();
-            gameData[i][ZERO] = question;
+            gameData[i][FIRST_ELEMENTS_NUMBER] = question;
             gameData[i][ONE] = correctAnswer;
         }
-        Engine.playGame(gameData);
+        Engine.playGame(INITIAL_QUESTION, gameData);
     }
 
     public static int countGreatestCommonDivisor(int a, int b) {

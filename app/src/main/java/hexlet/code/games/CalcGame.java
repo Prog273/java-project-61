@@ -1,46 +1,44 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
-import java.util.Random;
-
-import static hexlet.code.Engine.THREE;
+import static hexlet.code.Engine.*;
 
 public class CalcGame {
-    private static final int HUNDRED = 100;
-    private static final int ZERO = 0;
+    private static final int HUNDRED_AND_ONE = 101;
     private static final int ONE = 1;
-    private static final int TWO = 2;
-    private static String expression;
-    private static Integer result;
+    private static final String INITIAL_QUESTION = "What is the result of the expression?";
 
     public static void playCalcGame() {
-        String initialQuestion = "What is the result of the expression?";
-        System.out.println(initialQuestion);
-        String[][] gameData = new String[THREE][TWO];
+        String[][] gameData = new String[ROUNDS_NUMBER][ROWS_NUMBER];
 
-        for (int i = 0; i < THREE; i++) {
+        for (int i = 0; i < ROUNDS_NUMBER; i++) {
             generateOperation();
+            String[] expressionAndResult = generateOperation();
+            String expression = expressionAndResult[FIRST_ELEMENTS_NUMBER];
+            Integer result = Integer.valueOf(expressionAndResult[ONE]);
             String question = "Question: " + expression;
             String correctAnswer = result.toString();
-            gameData[i][ZERO] = question;
+            gameData[i][FIRST_ELEMENTS_NUMBER] = question;
             gameData[i][ONE] = correctAnswer;
         }
-        Engine.playGame(gameData);
+        Engine.playGame(INITIAL_QUESTION, gameData);
     }
 
-    public static void generateOperation() {
+    public static String[] generateOperation() {
         String[] operands = {"+", "-", "*"};
-        Random random = new Random();
-        String randomOperand = operands[random.nextInt(operands.length)];
-        int randomNumber1 = random.nextInt(HUNDRED) + 1;
-        int randomNumber2 = random.nextInt(HUNDRED) + 1;
-        expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
-        result = solveProblem(randomNumber1, randomNumber2, randomOperand);
+        String randomOperand = operands[Utils.getRandomInt(operands.length)];
+        int randomNumber1 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
+        int randomNumber2 = Utils.getRandomInt(ONE,HUNDRED_AND_ONE);
+        String expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
+        Integer result = solveProblem(randomNumber1, randomNumber2, randomOperand);
+        String[] expressionAndResult = {expression, result.toString()};
+        return expressionAndResult;
     }
 
     public static Integer solveProblem(int number1, int number2, String operand) {
-        int resultOfOperation;
+        Integer resultOfOperation;
         switch (operand) {
             case "+":
                 resultOfOperation = number1 + number2;
@@ -52,7 +50,7 @@ public class CalcGame {
                 resultOfOperation = number1 * number2;
                 break;
             default:
-                resultOfOperation = 0;
+                resultOfOperation = null;
         }
         return resultOfOperation;
     }

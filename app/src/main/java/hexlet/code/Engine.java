@@ -3,12 +3,10 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int ZERO = 0;
+    public static final int FIRST_ELEMENTS_NUMBER = 0;
+    public static final int ROWS_NUMBER = 2;
+    public static final int ROUNDS_NUMBER = 3;
     private static final int ONE = 1;
-    public static final int THREE = 3;
-    private static String question;
-    private static String answer;
-    private static String correctAnswer;
 
     public static String getUserName() {
         Scanner scanner = new Scanner(System.in);
@@ -18,16 +16,17 @@ public class Engine {
         return userName;
     }
 
-    public static void playGame(String[][] gameData) {
+    public static void playGame(String initialQuestion, String[][] gameData) {
         Scanner scanner = new Scanner(System.in);
         String userName = Engine.getUserName();
 
-        for (int i = 0; i < THREE; i++) {
-            question = gameData[i][ZERO];
+        System.out.println(initialQuestion);
+        for (int i = 0; i < ROUNDS_NUMBER; i++) {
+            String question = gameData[i][FIRST_ELEMENTS_NUMBER];
             System.out.println(question);
-            answer = scanner.next();
+            String answer = scanner.next();
             System.out.println("Your answer: " + answer);
-            correctAnswer = gameData[i][ONE];
+            String correctAnswer = gameData[i][ONE];
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {
