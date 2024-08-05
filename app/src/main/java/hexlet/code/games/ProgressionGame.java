@@ -25,7 +25,8 @@ public class ProgressionGame {
             int[] elements = generateProgression(numberOfElements, firstElement, difference);
             String[] progressionWithMissedMemberAndNecessaryNumber = generateProgressionWithMissedElement(elements);
             String progressionWithMissedMember = progressionWithMissedMemberAndNecessaryNumber[FIRST_ELEMENTS_NUMBER];
-            Integer necessaryNumber = Integer.valueOf(progressionWithMissedMemberAndNecessaryNumber[SECOND_ELEMENTS_NUMBER]);
+            Integer necessaryNumber
+                    = Integer.valueOf(progressionWithMissedMemberAndNecessaryNumber[SECOND_ELEMENTS_NUMBER]);
             String question = "Question: " + progressionWithMissedMember;
             String correctAnswer = necessaryNumber.toString();
             gameData[i][FIRST_ELEMENTS_NUMBER] = question;
