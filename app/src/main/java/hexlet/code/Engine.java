@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int FIRST_ELEMENTS_NUMBER = 0;
+    public static final int SECOND_ELEMENTS_NUMBER = 1;
     public static final int ROWS_NUMBER = 2;
     public static final int ROUNDS_NUMBER = 3;
-    private static final int ONE = 1;
 
     public static String getUserName() {
         Scanner scanner = new Scanner(System.in);
@@ -19,14 +19,14 @@ public class Engine {
     public static void playGame(String initialQuestion, String[][] gameData) {
         Scanner scanner = new Scanner(System.in);
         String userName = Engine.getUserName();
-
         System.out.println(initialQuestion);
+
         for (int i = 0; i < ROUNDS_NUMBER; i++) {
             String question = gameData[i][FIRST_ELEMENTS_NUMBER];
             System.out.println(question);
             String answer = scanner.next();
             System.out.println("Your answer: " + answer);
-            String correctAnswer = gameData[i][ONE];
+            String correctAnswer = gameData[i][SECOND_ELEMENTS_NUMBER];
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
             } else {

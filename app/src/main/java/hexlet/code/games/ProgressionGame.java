@@ -5,6 +5,7 @@ import hexlet.code.Utils;
 
 import static hexlet.code.Engine.ROUNDS_NUMBER;
 import static hexlet.code.Engine.FIRST_ELEMENTS_NUMBER;
+import static hexlet.code.Engine.SECOND_ELEMENTS_NUMBER;
 import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class ProgressionGame {
@@ -24,11 +25,11 @@ public class ProgressionGame {
             int[] elements = generateProgression(numberOfElements, firstElement, difference);
             String[] progressionWithMissedMemberAndNecessaryNumber = generateProgressionWithMissedElement(elements);
             String progressionWithMissedMember = progressionWithMissedMemberAndNecessaryNumber[FIRST_ELEMENTS_NUMBER];
-            Integer necessaryNumber = Integer.valueOf(progressionWithMissedMemberAndNecessaryNumber[ONE]);
+            Integer necessaryNumber = Integer.valueOf(progressionWithMissedMemberAndNecessaryNumber[SECOND_ELEMENTS_NUMBER]);
             String question = "Question: " + progressionWithMissedMember;
             String correctAnswer = necessaryNumber.toString();
             gameData[i][FIRST_ELEMENTS_NUMBER] = question;
-            gameData[i][ONE] = correctAnswer;
+            gameData[i][SECOND_ELEMENTS_NUMBER] = correctAnswer;
         }
         Engine.playGame(INITIAL_QUESTION, gameData);
     }

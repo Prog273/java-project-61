@@ -5,6 +5,7 @@ import hexlet.code.Utils;
 
 import static hexlet.code.Engine.ROUNDS_NUMBER;
 import static hexlet.code.Engine.FIRST_ELEMENTS_NUMBER;
+import static hexlet.code.Engine.SECOND_ELEMENTS_NUMBER;
 import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class GcdGame {
@@ -21,7 +22,7 @@ public class GcdGame {
             Integer gcd = countGreatestCommonDivisor(randomNumber1, randomNumber2);
             String correctAnswer = gcd.toString();
             gameData[i][FIRST_ELEMENTS_NUMBER] = question;
-            gameData[i][ONE] = correctAnswer;
+            gameData[i][SECOND_ELEMENTS_NUMBER] = correctAnswer;
         }
         Engine.playGame(INITIAL_QUESTION, gameData);
     }

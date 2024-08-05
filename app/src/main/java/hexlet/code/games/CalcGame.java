@@ -5,6 +5,7 @@ import hexlet.code.Utils;
 
 import static hexlet.code.Engine.ROUNDS_NUMBER;
 import static hexlet.code.Engine.FIRST_ELEMENTS_NUMBER;
+import static hexlet.code.Engine.SECOND_ELEMENTS_NUMBER;
 import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class CalcGame {
@@ -19,11 +20,11 @@ public class CalcGame {
             generateOperation();
             String[] expressionAndResult = generateOperation();
             String expression = expressionAndResult[FIRST_ELEMENTS_NUMBER];
-            Integer result = Integer.valueOf(expressionAndResult[ONE]);
+            Integer result = Integer.valueOf(expressionAndResult[SECOND_ELEMENTS_NUMBER]);
             String question = "Question: " + expression;
             String correctAnswer = result.toString();
             gameData[i][FIRST_ELEMENTS_NUMBER] = question;
-            gameData[i][ONE] = correctAnswer;
+            gameData[i][SECOND_ELEMENTS_NUMBER] = correctAnswer;
         }
         Engine.playGame(INITIAL_QUESTION, gameData);
     }
