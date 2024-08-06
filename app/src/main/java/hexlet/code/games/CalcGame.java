@@ -9,8 +9,8 @@ import static hexlet.code.Engine.SECOND_ELEMENTS_NUMBER;
 import static hexlet.code.Engine.ROWS_NUMBER;
 
 public class CalcGame {
-    private static final int HUNDRED_AND_ONE = 101;
-    private static final int ONE = 1;
+    private static final int UPPER_BOUND = 101;
+    private static final int LOWER_BOUND = 1;
     private static final String INITIAL_QUESTION = "What is the result of the expression?";
 
     public static void playCalcGame() {
@@ -32,8 +32,8 @@ public class CalcGame {
     public static String[] generateOperation() {
         String[] operands = {"+", "-", "*"};
         String randomOperand = operands[Utils.getRandomInt(operands.length)];
-        int randomNumber1 = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
-        int randomNumber2 = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
+        int randomNumber1 = Utils.getRandomInt(LOWER_BOUND, UPPER_BOUND);
+        int randomNumber2 = Utils.getRandomInt(LOWER_BOUND, UPPER_BOUND);
         String expression = randomNumber1 + " " + randomOperand + " " + randomNumber2;
         Integer result = solveProblem(randomNumber1, randomNumber2, randomOperand);
         String[] expressionAndResult = {expression, result.toString()};

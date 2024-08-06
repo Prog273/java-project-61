@@ -11,8 +11,8 @@ import static hexlet.code.Engine.ROWS_NUMBER;
 public class ProgressionGame {
     private static final int TEN = 10;
     private static final int ELEVEN = 11;
-    private static final int HUNDRED_AND_ONE = 101;
-    private static final int ONE = 1;
+    private static final int UPPER_BOUND = 101;
+    private static final int LOWER_BOUND = 1;
     private static final String INITIAL_QUESTION = "What number is missing in the progression?";
 
     public static void playProgressionGame() {
@@ -20,8 +20,8 @@ public class ProgressionGame {
         int numberOfElements = TEN;
 
         for (int i = 0; i < ROUNDS_NUMBER; i++) {
-            int firstElement = Utils.getRandomInt(ONE, HUNDRED_AND_ONE);
-            int difference = Utils.getRandomInt(ONE, ELEVEN);
+            int firstElement = Utils.getRandomInt(LOWER_BOUND, UPPER_BOUND);
+            int difference = Utils.getRandomInt(LOWER_BOUND, ELEVEN);
             int[] elements = generateProgression(numberOfElements, firstElement, difference);
             String[] progressionWithMissedMemberAndNecessaryNumber = generateProgressionWithMissedElement(elements);
             String progressionWithMissedMember = progressionWithMissedMemberAndNecessaryNumber[FIRST_ELEMENTS_NUMBER];
